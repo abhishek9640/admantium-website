@@ -956,4 +956,62 @@
         padding: 0 20px;
     }
 }
+
+/* Modern Table Styling for Comparison Sections */
+.table-modern {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(44, 62, 80, 0.08);
+    overflow: hidden;
+    margin: 40px 0;
+    width: 100%;
+}
+.table-modern th, .table-modern td {
+    padding: 20px 18px;
+    text-align: left;
+    font-size: 16px;
+    border: none;
+}
+.table-modern th {
+    background: #f7fafd;
+    color: #3498db;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #e0e0e0;
+}
+.table-modern tbody tr:nth-child(even) {
+    background: #f7fafd;
+}
+.table-modern tbody tr:nth-child(odd) {
+    background: #fff;
+}
+.table-modern td {
+    color: #2c3e50;
+    vertical-align: middle;
+}
+.table-modern tr {
+    border-bottom: 1px solid #eaeaea;
+}
+.table-responsive {
+    border-radius: 16px;
+    overflow-x: auto;
+    box-shadow: none;
+    background: none;
+}
+@media (max-width: 767px) {
+    .table-modern th, .table-modern td {
+        padding: 12px 8px;
+        font-size: 14px;
+    }
+}
 </style>
+
+<script>
+// Add 'table-modern' class to all comparison tables on DOMContentLoaded
+window.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.table-responsive > table').forEach(function(table) {
+        table.classList.add('table-modern');
+    });
+});
+</script>
